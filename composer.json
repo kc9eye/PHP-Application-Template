@@ -1,0 +1,18 @@
+{
+    "name":"kc9eye/app",
+    "license":"Apache-2.0",
+    "authors": [
+        {
+            "name": "Paul W. Lane",
+            "email": "kc9eye@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "kc9eye\\":"src/"
+        }
+    },
+    "require":{
+        
+    }
+}
