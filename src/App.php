@@ -20,6 +20,7 @@ define('DB_DCS','YOUR DATABASE CONNECTION STRING');
 define('SESSION_NAME','247eb060-0cb7-4972-b45b-3d3f85488265');
 define('AUTH_CALLBACK','last_request');
 define('AUTH_FAILED','not_valid');
+define('VALID_USER','valid_user');
 define('ROUTE_SEPARATOR','sigint');
 define('HOST_ADDR','');
 define('ROUTE_SWITCH','sigint');
