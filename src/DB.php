@@ -20,8 +20,8 @@ namespace kc9eye;
 //This class will have to be rewritten to implement your particular DB being usered.
 
 class DB implements Database{
-
-    public static function Insert($sql = "", Array $insert) : bool
+    private static $dbh;
+    public static function Insert($sql = "", Array $insert = []) : bool
     {
         return true;
     }
@@ -34,5 +34,13 @@ class DB implements Database{
     public static function DBCommand($command): bool
     {
         return true;
+    }
+
+    private static function dbHandle()
+    {
+        if (is_null(self::$dbh)) {
+            self::$dbh = "";
+        }
+        return self::$dbh;
     }
 }
