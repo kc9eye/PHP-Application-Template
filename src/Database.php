@@ -17,7 +17,7 @@
 namespace kc9eye;
 
 interface Database {
-    public static function Insert($sql = "", Array $insert):bool;
+    public static function Insert($sql = "", Array $insert = []):bool;
     public static function Query($query,Array $subs = []):Array;
     public static function DBCommand($command):bool;
 }
