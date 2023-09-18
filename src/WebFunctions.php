@@ -35,6 +35,10 @@ class WebFunctions {
         exit();
     }
 
+    public function authenticate()
+    {
+    }
+    
     public static function isValidUser() : bool
     {
         return false;
