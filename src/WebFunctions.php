@@ -35,8 +35,37 @@ class WebFunctions {
         exit();
     }
 
+    public static function notAuthorized()
+    {
+        ViewWidgets::header("Security Restriction");
+        ViewWidgets::banner();
+        echo
+        '<div class="row" style="min-height:87vh">
+            <div class="col">
+                <h1>Restricted Access</h1>
+                <p>The current account lacks sufficient privileges for the requested resource.</p>
+            </div>
+        </div>';
+        ViewWidgets::footer();
+    }
+
+    public static function notAuthorizedText()
+    {
+        exit("<pre>Insufficient privileges for resource.</pre>");
+    }
+    
     public function authenticate()
     {
+    }
+
+    public function logout() 
+    {
+        $_SESSION = array();
+        $params = session_get_cookie_params();
+        setcookie(SESSION_NAME, '', (time() - 60), $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+        session_destroy();
+        header('Location: /');
+        exit();
     }
     
     public static function isValidUser() : bool
