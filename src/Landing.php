@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace kc9eye;
+namespace Application;
 class Landing {
     public function __construct()
     {
@@ -28,7 +28,7 @@ class Landing {
         ViewWidgets::navbar();
         echo
         '<div class="container-fluid">
-            <div class="row">
+            <div class="row" style="min-height:74vh">
                 <div classs="col">
                     <h1>Landing</h1>
                 </div>

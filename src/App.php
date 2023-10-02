@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace kc9eye;
+namespace Application;
 
 define('DB_DCS','YOUR DATABASE CONNECTION STRING');
 define('SESSION_NAME','247eb060-0cb7-4972-b45b-3d3f85488265');
 define('AUTH_CALLBACK','last_request');
 define('AUTH_FAILED','not_valid');
 define('VALID_USER','valid_user');
-define('ROUTE_SEPARATOR','sigint');
+define('ROUTE_SEPARATOR','651ae323d042f');
 define('HOST_ADDR','');
-define('ROUTE_SWITCH','sigint');
+define('ROUTE_SWITCH','app');
 define('NOBUFF',false);
-define('DEBUG',false);
+define('DEBUG',true); #Change to false to log errors, instead of displaying them
 define('VERSION',1.0);
 
 //Secure the session cookie
@@ -36,11 +36,11 @@ ini_set("session.cookie_samesite","strict");
 ini_set("session.use_strict_mode","1");
 
 //Start the output buffer
-ob_start("kc9eye\minOutput",0,PHP_OUTPUT_HANDLER_STDFLAGS);
+ob_start(__NAMESPACE__."\minOutput",0,PHP_OUTPUT_HANDLER_STDFLAGS);
 
 //Set the error and exception handling
-set_error_handler('kc9eye\errorHandler');
-set_exception_handler('kc9eye\exceptionHandler');
+set_error_handler(__NAMESPACE__.'\errorHandler');
+set_exception_handler(__NAMESPACE__.'\exceptionHandler');
 
 //Set the session cookie and start the session
 $params = session_get_cookie_params();
@@ -81,7 +81,7 @@ if (isset($_REQUEST[ROUTE_SWITCH]))
     }
     else
     {
-        $class = 'kc9eye\\'.$request['class'];
+        $class = __NAMESPACE__.'\\'.$request['class'];
         $method = $request['method'];
         //Check if the class exists
         if (!class_exists($class,true))
@@ -123,7 +123,6 @@ elseif (WebFunctions::isValidUser())
         new Landing();
         exit();
     }
-
 }
 else
 {
@@ -296,7 +295,7 @@ function errorHandler ($code,$msg,$file,$line,$trace = [])
  */
 function exceptionHandler($e)
 {
-    return \kc9eye\errorHandler(
+    return __NAMESPACE__.errorHandler(
         $e->getCode(),
         $e->getMessage(),
         $e->getFile(),

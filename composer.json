@@ -1,5 +1,5 @@
 {
-    "name":"kc9eye/app",
+    "name":"kc9eye/php-application-template",
     "license":"Apache-2.0",
     "authors": [
         {
@@ -9,7 +9,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "kc9eye\\":"src/"
+            "Application\\":"src/"
         }
     },
     "require":{

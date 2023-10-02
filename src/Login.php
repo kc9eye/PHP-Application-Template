@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace kc9eye;
+namespace Application;
 class Login {
     public function __construct()
     {
@@ -39,7 +39,7 @@ class Login {
                             }
 
                 echo
-                '            <div class="form-group">
+                '           <div class="form-group">
                                 <label for="username">Username:</label>
                                 <input class="form-control" type="email" name="username" required />
                             </div>

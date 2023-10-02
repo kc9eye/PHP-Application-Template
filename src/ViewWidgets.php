@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace kc9eye;
+namespace Application;
 class ViewWidgets {
     public static function header($title = "TITLE HERE", Array $inserts = [])
     {

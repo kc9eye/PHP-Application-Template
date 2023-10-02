@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace kc9eye;
+namespace Application;
 class WebFunctions {
     public static function notFound()
     {
@@ -22,7 +22,7 @@ class WebFunctions {
         ViewWidgets::banner();
         echo
         '<div class="container-fluid">
-            <div class="row">
+            <div class="row" style="min-height:82vh">
                 <div class="col">
                     <div class="m-3 p-3 border border-secondary rounded">
                         <h1>Resource Not Found</h1>
@@ -56,6 +56,12 @@ class WebFunctions {
     
     public function authenticate()
     {
+        if (($_REQUEST['username']=="admin@localhost.net") && ($_REQUEST['password']=="password")) 
+            $_SESSION[VALID_USER] = true;
+        else 
+            $_SESSION[AUTH_FAILED] = true;
+        header('Location: /');
+        exit();
     }
 
     public function logout() 
@@ -70,6 +76,6 @@ class WebFunctions {
     
     public static function isValidUser() : bool
     {
-        return false;
+        return isset($_SESSION[VALID_USER]);
     }
 }

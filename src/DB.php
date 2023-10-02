@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace kc9eye;
+namespace Application;
 
 //Abstration layer for the application. All template DB calls use this class.
 //This class will have to be rewritten to implement your particular DB being usered.

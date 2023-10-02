@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace kc9eye;
+namespace Application;
 
 interface Database {
     public static function Insert($sql = "", Array $insert = []):bool;
