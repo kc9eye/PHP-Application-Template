@@ -16,7 +16,7 @@
  */
 namespace Application;
 
-define('DB_DCS','YOUR DATABASE CONNECTION STRING');
+define('DB_DCS', $_ENV['DB_DCS']);
 define('SESSION_NAME','247eb060-0cb7-4972-b45b-3d3f85488265');
 define('AUTH_CALLBACK','last_request');
 define('AUTH_FAILED','not_valid');
@@ -27,6 +27,8 @@ define('ROUTE_SWITCH','app');
 define('NOBUFF',false);
 define('DEBUG',true); #Change to false to log errors, instead of displaying them
 define('VERSION',1.0);
+define('COPYRIGHT','Application Developer');
+define('COPYRIGHT_YEAR','2023');
 
 //Secure the session cookie
 ini_set("session.use_only_cookies","1");

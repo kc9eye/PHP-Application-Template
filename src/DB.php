@@ -19,7 +19,7 @@ namespace Application;
 //Abstration layer for the application. All template DB calls use this class.
 //This class will have to be rewritten to implement your particular DB being usered.
 
-class DB implements Database{
+class DB implements Database {
     private static $dbh;
     public static function Insert($sql = "", Array $insert = []) : bool
     {
@@ -34,6 +34,26 @@ class DB implements Database{
     public static function DBCommand($command): bool
     {
         return true;
+    }
+
+    public static function GetUserAccount($userid): array
+    {
+        return array();
+    }
+
+    public static function GetUserProfile($userid): array
+    {
+        return array();
+    }
+
+    public static function GetUserRoles($userid): array
+    {
+        return array();
+    }
+
+    public static function GetUserPermissions($userid): array
+    {
+        return array();
     }
 
     private static function dbHandle()

@@ -1,0 +1,51 @@
+SQL/NoSQL Database Schema
+
+-- users
+    | -- id
+    | -- profileid -> profiles(id)
+    | -- username               
+    | -- password
+    | -- created_date
+
+-- profiles
+    | -- id
+    | -- namehonorific
+    | -- firstname
+    | -- middlename
+    | -- lastname
+    | -- othername
+    | -- namesuffix
+    | -- alias
+    | -- address_street
+    | -- address_other
+    | -- address_city
+    | -- address_political
+    | -- address_postal_code
+    | -- address_country
+    | -- contact_number
+    | -- website
+    | -- notes
+
+-- roles
+    | -- id
+    | -- role_name
+    | -- created_date
+    | -- createdby -> users(id)
+
+-- permissions
+    | -- id
+    | -- permission_name
+    | -- created_date
+    | -- createdby -> users(id)
+
+-- user_roles
+    | -- userid -> users(id)
+    | -- roleid -> roles(id)
+    | -- created_date
+    | -- createdby -> users(id)
+
+-- role_permissions
+    | -- roleid -> roles(id)
+    | -- permissionid -> permissions(id)
+    | -- created_date
+    | -- createdby -> users(id)
